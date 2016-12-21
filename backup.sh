@@ -3,12 +3,12 @@ cd $(dirname $0)
 source "utility_scripts/trap_err.sh"
 source "bash_variables.sh"
 
-for i in "${paths[@]}"; do
+for i in "${source_paths[@]}"; do
     echo "Backing up $i"
     if [ -n "${local_user}" ]; then
-        sudo su -c "rsync -avzP -e \"${shell_option}\" ${login}:${base_path}/${i} /media/data/backup2/" ${local_user}
+        sudo su -c "rsync -avzP ${rsync_options} -e \"${shell_option}\" ${login}:${source_base_path}/${i} ${destination_path}" ${local_user}
     else
-        rsync -avzP -e "${shell_option}" ${login}:${base_path}/${i} /media/data/backup2/
+        rsync -avzP ${rsync_options} -e "${shell_option}" ${login}:${source_base_path}/${i} ${destination_path}
     fi
 done
 
