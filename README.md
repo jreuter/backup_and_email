@@ -23,3 +23,9 @@ Generate the key pair.
 Push the public key as your user.
 
     cat ~/.ssh/id_rsa.pub | ssh -p 22 usernamme@your_server_ip 'cat >> .ssh/authorized_keys'
+
+## Create Variables
+
+You will need to create a `variables.sh` file.  You can copy and edit the `sample_variables.sh` to get started.
+
+I recommend using test directories with small files/folders that aren't important or are backed up for testing.
