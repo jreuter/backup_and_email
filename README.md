@@ -2,7 +2,7 @@
 
 Series of scripts to backup and email when complete.
 
-This is using bash to run sync over SSH.  The purpose is to maintain an offsite RAID backup of my primary server at home.
+This is using bash to run rsync over SSH.  The purpose is to maintain an offsite RAID backup of my primary server at home.
 
 ## Assumptions
 
@@ -26,6 +26,6 @@ Push the public key as your user.
 
 ## Create Variables
 
-You will need to create a `variables.sh` file.  You can copy and edit the `sample_variables.sh` to get started.
+You will need to create a `bash_variables.sh` and `email_variables.php` files in the root directory.  You can copy and edit the samples to get started.
 
 I recommend using test directories with small files/folders that aren't important or are backed up for testing.
