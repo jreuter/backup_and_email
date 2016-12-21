@@ -11,3 +11,15 @@ The following software should be installed and configured.  This doesn't require
 * Bash
 * PHP7-cli
 * ssmtp
+
+Since this can be run from a crontab, it is expected you have an SSH loging that doesn't require user interaction (i.e. ssh keys with no passphrase).
+
+## To Create and Use SSH Keys
+
+Generate the key pair.
+
+    ssh-keygen -t rsa
+
+Push the public key as your user.
+
+    cat ~/.ssh/id_rsa.pub | ssh -p 22 usernamme@your_server_ip 'cat >> .ssh/authorized_keys'
