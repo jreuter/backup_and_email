@@ -1,3 +1,4 @@
 .idea
-variables.sh
+bash_variables.sh
+email_variables.php
 

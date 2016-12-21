@@ -1,7 +1,7 @@
 #!/bin/bash
+cd $(dirname $0)
 source "utility_scripts/trap_err.sh"
-source "utility_scripts/root_guard.sh"
-source "variables.sh"
+source "bash_variables.sh"
 
 for i in "${paths[@]}"; do
     echo "Backing up $i"
@@ -11,3 +11,6 @@ for i in "${paths[@]}"; do
         rsync -avzP -e "${shell_option}" ${login}:${base_path}/${i} /media/data/backup2/
     fi
 done
+
+echo "Sending email"
+./utility_scripts/email.php
