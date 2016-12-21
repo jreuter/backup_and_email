@@ -29,3 +29,13 @@ Push the public key as your user.
 You will need to create a `bash_variables.sh` and `email_variables.php` files in the root directory.  You can copy and edit the samples to get started.
 
 I recommend using test directories with small files/folders that aren't important or are backed up for testing.
+
+## Set up cronjob
+
+You can set up a cronjob to run as a normal user.  Simply run `crontab -e` when you are not root.
+
+I put my cronjob up to run at 3am each Wednesday by adding the following line.
+
+    00 3 * * 3 /media/data/code/backup_and_email/backup.sh
+
+It's a good idea to research cronjobs a bit before doing this if you aren't familiar with them.  Also you may want to move the code later to someplace like `/opt`.
