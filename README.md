@@ -39,3 +39,9 @@ I put my cronjob up to run at 3am each Wednesday by adding the following line.
     00 3 * * 3 /media/data/code/backup_and_email/backup.sh
 
 It's a good idea to research cronjobs a bit before doing this if you aren't familiar with them.  Also you may want to move the code later to someplace like `/opt`.
+
+## To use the BackBlaze Script
+
+You need to install their client.
+
+    wget https://github.com/Backblaze/B2_Command_Line_Tool/releases/latest/download/b2-linux
