@@ -7,7 +7,7 @@ touch b2_output
 for i in "${source_paths[@]}"; do
     echo "Backing up $i" >> b2_output
     ./b2-linux authorize-account ${key_id} ${application_key}
-    ./b2-linux sync "${source_base_path}/${i}" "${destination_path}/${i}"
+    ./b2-linux sync --excludeAllSymlinks "${source_base_path}/${i}" "${destination_path}/${i}"
 done
 
 echo "Sending email"
