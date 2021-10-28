@@ -2,8 +2,8 @@
 <?PHP
 include 'email_variables.php';
 
-    $sub = "NAS Backup - RSYNC Complete";
-    $msg = "Your backup has completed successfully.\n";
+    $sub = "NAS Media Backup - RSYNC Complete";
+    $msg = "Your backup has completed successfully.\n\n".file_get_contents("output");
 
     $emails = explode ( " ", $to );
     $i = 0;
